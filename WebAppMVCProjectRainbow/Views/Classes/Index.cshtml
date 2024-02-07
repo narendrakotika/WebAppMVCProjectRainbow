@@ -1,0 +1,47 @@
+﻿@model IEnumerable<WebAppMVCProjectRainbow.Models.Classe>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Classes</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CStrength)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CTeacherName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CStrength)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CTeacherName)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.CId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.CId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

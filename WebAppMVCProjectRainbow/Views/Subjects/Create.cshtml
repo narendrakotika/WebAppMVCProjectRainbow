@@ -1,0 +1,43 @@
+﻿@model WebAppMVCProjectRainbow.Models.Subject
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Subject</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="SubName" class="control-label"></label>
+                <input asp-for="SubName" class="form-control" />
+                <span asp-validation-for="SubName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SubTeacher" class="control-label"></label>
+                <input asp-for="SubTeacher" class="form-control" />
+                <span asp-validation-for="SubTeacher" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SubAuthor" class="control-label"></label>
+                <input asp-for="SubAuthor" class="form-control" />
+                <span asp-validation-for="SubAuthor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
